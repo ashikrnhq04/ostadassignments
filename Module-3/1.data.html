@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body id="document">
+    <h1 id="result"></h1>
+
+    <script>
+      let res = document.getElementById("result");
+      // return the day of the week
+
+      function rtnDay(dateData) {
+        let date = new Date(dateData);
+        let prf;
+        switch (date.getDay() + 1) {
+          case 1:
+            prf = "st";
+            break;
+          case 2:
+            prf = "nd";
+            break;
+          case 3:
+            prf = "rd";
+            break;
+          default:
+            prf = "th";
+        }
+        res.innerHTML = `<h1>Today is the ${
+          new Date(dateData).getDay() + 1 + prf
+        } day of the week</h1>`;
+        return date.getDay() + 1;
+      }
+      let date = new Date();
+      rtnDay(`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`);
+    </script>
+  </body>
+</html>

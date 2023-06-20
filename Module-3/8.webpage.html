@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis,
+      autem, sint vel at voluptate exercitationem porro sed nesciunt aperiam
+      consequatur iste aspernatur? Quos consectetur unde id? Voluptas aspernatur
+      corrupti quis?
+    </p>
+    <button id="myBtn" type="button">Click Here!</button>
+
+    <script>
+      let btn = document.getElementById("myBtn");
+      function btnClick(btn) {
+        btn.addEventListener("click", function (event) {
+          event.target.innerHTML = "Button Clicked!";
+        });
+      }
+      btnClick(btn);
+    </script>
+  </body>
+</html>

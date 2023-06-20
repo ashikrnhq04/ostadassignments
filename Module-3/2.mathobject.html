@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body id="document">
+    <h1 id="result"></h1>
+    <script>
+      let res = document.getElementById("result");
+
+      //return the square root of the sum of all the square elements of an array
+      function sqrRoot(arr) {
+        let sum = 0;
+        arr.forEach((element) => {
+          sum += Math.pow(element, 2);
+        });
+        res.innerHTML = `<h1>The square root of all the elements of array square is ${Math.sqrt(
+          sum
+        )}</h1>`;
+        return Math.sqrt(sum);
+      }
+      let number = [2, 4, 5, 6, 11];
+      sqrRoot(number);
+    </script>
+  </body>
+</html>

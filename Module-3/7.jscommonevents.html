@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body id="document">
+    <h1 id="result"></h1>
+    <img
+      id="myImage"
+      src="https://placehold.co/600x400/000000/FFFFFF/png"
+      alt=""
+    />
+    <script>
+      let res = document.getElementById("result");
+
+      // 7. JS common events
+      function jsEvent() {
+        let img = document.getElementById("myImage");
+        let doc = document.getElementById("document");
+        doc.addEventListener("keypress", function (event) {
+          alert("You pressed the key : " + event.key);
+        });
+
+        document.addEventListener("click", function (event) {
+          alert(
+            `Click position far from left is ${event.clientX} \nand far from the top is  ${event.clientY}`
+          );
+        });
+        img.addEventListener("mouseover", function () {
+          img.src = "https://placehold.co/600x400/FF0000/FFFFFF/png";
+        });
+
+        img.addEventListener("mouseout", function () {
+          img.src = "https://placehold.co/600x400/000000/FFFFFF/png";
+        });
+      }
+      jsEvent();
+    </script>
+  </body>
+</html>

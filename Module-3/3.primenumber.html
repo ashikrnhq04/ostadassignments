@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body id="document">
+    <h1 id="result"></h1>
+    <script>
+      let res = document.getElementById("result");
+
+      //prime number
+      function primeNumber(num) {
+        let prime = true;
+        if (num >= 2) {
+          for (let i = 2; i < num; i++) {
+            if (num % 2 == 0) {
+              prime = false;
+              break;
+            }
+          }
+        }
+        let str = prime ? "is a prime" : "is not a prime";
+        res.innerHTML = `<h1>The given number ${str} number</h1>`;
+        return prime;
+      }
+      let number = prompt(
+        "Please put a number to check if it's a prime number"
+      );
+      primeNumber(number);
+    </script>
+  </body>
+</html>

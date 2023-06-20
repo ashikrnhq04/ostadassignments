@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .highlighted {
+        background: yellow;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque sunt cum
+      alias est quis praesentium. Dignissimos sequi suscipit enim deleniti cum,
+      praesentium necessitatibus iste unde! Quaerat commodi praesentium repellat
+      aliquam?
+    </p>
+    <button id="myBtn">Click Here!</button>
+    <script>
+      let btn = document.querySelector("#myBtn");
+      function changeBackgroung(btn) {
+        let paragraph = document.querySelector("p");
+        btn.addEventListener("click", function (event) {
+          paragraph.classList.add("highlighted");
+        });
+      }
+      changeBackgroung(btn);
+    </script>
+  </body>
+</html>

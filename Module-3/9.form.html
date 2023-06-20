@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      form {
+        width: 60%;
+        margin: 0 auto;
+        padding: 30px;
+      }
+      input {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 10px 15px;
+        margin: 20px 0px;
+      }
+      button {
+        width: 100%;
+        padding: 15px;
+        margin: 10px 0px;
+      }
+      span {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <form method="post" id="myForm" action="#">
+      <div>
+        <input class="name" type="text" name="name" />
+        <span class="nameErr"></span>
+      </div>
+      <div>
+        <input class="email" type="email" name="email" />
+        <span class="emailErr"></span>
+      </div>
+      <div>
+        <input class="password" type="password" name="password" />
+        <span class="passErr"></span>
+      </div>
+      <div>
+        <input class="confpassword" type="password" name="confpassword" />
+        <span class="confirmPass"></span>
+      </div>
+      <div>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+    <script>
+      let form = document.querySelector("#myForm");
+
+      let name = form.querySelector("input.name");
+      let nameErr = form.querySelector(".nameErr");
+
+      let pass = form.querySelector("input.password");
+      let passErr = form.querySelector(".passErr");
+
+      let confpass = form.querySelector("input.confpassword");
+      let confpassErr = form.querySelector(".confirmPass");
+
+      let email = form.querySelector("intput.email");
+      let emailErr = form.querySelector(".emailErr");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        if (name.value === "") {
+          nameErr.innerHTML = "Name field cannot be empty!";
+        }
+        if (pass.value === "") {
+          passErr.innerHTML = "Password cannot be empty!";
+        } else if (pass.value.length < 8) {
+          passErr.innerHTML = "Password must be 8 characters at minimum";
+        }
+        if (confpass.value === "") {
+          confpassErr.innerHTML = "Please confirm your password";
+        } else if (confpass.value !== pass.value) {
+          confpassErr.innerHTML = "Password didn't match!";
+        }
+      });
+    </script>
+  </body>
+</html>

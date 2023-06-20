@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body id="document">
+    <h1 id="result"></h1>
+
+    <script>
+      let res = document.getElementById("result");
+      // Geolocaiton
+
+      function geo(position) {
+        navigator.geolocation.getCurrentPosition(position);
+      }
+      function myPositon(position) {
+        let myPositon = `<h1>Your Latitude is ${position.coords.latitude} and your Longiture is ${position.coords.longitude}</h1>`;
+        res.innerHTML = myPositon;
+      }
+      geo(myPositon);
+    </script>
+  </body>
+</html>
